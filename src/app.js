@@ -7,9 +7,10 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
+  let ic = iconoRandom();
   document.querySelector("#numero").innerHTML = numberRandom();
-  document.querySelector("#logo").innerHTML = jaja;
-  document.querySelector("#logo2").innerHTML = jaja;
+  document.querySelector("#logo").innerHTML = ic;
+  document.querySelector("#logo2").innerHTML = ic;
 
   //escoje un numero
   function numberRandom() {
@@ -31,12 +32,18 @@ window.onload = function() {
     let random = Math.floor(Math.random() * numeros.length);
     return numeros[random];
   }
+
   function iconoRandom() {
     let iconos = ["♦", "♥", "♠", "♣"];
     let icrandom = Math.floor(Math.random() * iconos.length);
-    return iconos[icrandom];
+    let resultado = iconos[icrandom];
+    return resultado === "♥"
+      ? `<div style="color: red";>♥</div>`
+      : resultado === "♦"
+      ? `<div style="color: red";>♦</div>`
+      : resultado;
   }
-  let jaja = iconoRandom();
+
   //function iconoRandom2() {
   //let iconos2 = ["♦", "♥", "♠", "♣"];
   //let icrandom2 = Math.floor(Math.random() * iconos2.length);

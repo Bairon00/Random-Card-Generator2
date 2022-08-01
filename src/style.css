@@ -27,3 +27,6 @@ body {
   margin-right: 25px;
   transform: rotate(180deg);
 }
+.rojo {
+  color: red;
+}
